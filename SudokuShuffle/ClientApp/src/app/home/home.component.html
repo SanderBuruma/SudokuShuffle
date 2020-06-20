@@ -8,9 +8,15 @@
     <div *ngFor="let i of [1,2,3,4,5]"
          fxFlex="20%"
          fxFlex.lt-sm="100%">
+        <button mat-raised-button color="primary">{{ i }}</button>
 
-        {{ i }}
 
     </div>
 
+</div>
+
+<div class="example-button-row">
+    <button mat-raised-button color="primary">Primary</button>
+    <button mat-raised-button color="accent">Accent</button>
+    <button mat-raised-button color="warn">Warn</button>
 </div>
