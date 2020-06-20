@@ -1,0 +1,16 @@
+<h1>Hello, world!</h1>
+<p>Welcome to your new single-page application, built with:</p>
+<div class="container"
+     fxLayout="row"
+     fxLayout.lt-sm="column"
+     fxLayoutAlign="center">
+
+    <div *ngFor="let i of [1,2,3,4,5]"
+         fxFlex="20%"
+         fxFlex.lt-sm="100%">
+
+        {{ i }}
+
+    </div>
+
+</div>
