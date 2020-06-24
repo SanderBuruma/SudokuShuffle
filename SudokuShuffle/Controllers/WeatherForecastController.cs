@@ -26,6 +26,8 @@ namespace SudokuShuffle.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
+            SudokuShuffle.Model.SudokuGrid temp = new Model.SudokuGrid();
+
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {

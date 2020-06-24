@@ -1,0 +1,11 @@
+﻿<div class="cell-row"    *ngFor="let i of [0,1,2,3,4,5,6,7,8]"    fxLayoutAlign="center">
+
+    <div *ngFor="let j of [0,1,2,3,4,5,6,7,8]"
+         class="cell"         fxLayoutAlign="center center"
+         (click)="ClickCell(j + i*9)"
+         [class.active]="SelectedCell.X === j && SelectedCell.Y === i"
+         >
+
+    </div>
+
+</div>
