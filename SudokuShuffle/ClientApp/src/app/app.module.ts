@@ -16,7 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 
 import { SudokuService } from './services/sudoku.service';
-import { KeyboardEventService } from './services/keyboardevents.service';
+import { KeyboardEventsService } from './services/keyboardevents.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,7 @@ import { KeyboardEventService } from './services/keyboardevents.service';
     MatButtonModule,
 
   ],
-  providers: [SudokuService, KeyboardEventService],
+  providers: [SudokuService, KeyboardEventsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

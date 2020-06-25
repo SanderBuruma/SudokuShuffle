@@ -1,11 +1,28 @@
-﻿<div class="cell-row"    *ngFor="let i of [0,1,2,3,4,5,6,7,8]"    fxLayoutAlign="center">
+<div class="cell-row"
+    *ngFor="let i of [0,1,2,3,4,5,6,7,8]"
+    fxLayoutAlign="center">
 
-    <div *ngFor="let j of [0,1,2,3,4,5,6,7,8]"
-         class="cell"         fxLayoutAlign="center center"
-         (click)="ClickCell(j + i*9)"
-         [class.active]="SelectedCell.X === j && SelectedCell.Y === i"
-         >
+  <div *ngFor="let j of [0,1,2,3,4,5,6,7,8]"
+       class="cell"
+       fxLayoutAlign="center center"
+       (click)="ClickCell(j + i*9)"
+       [class.active]="SelectedCell.X === j && SelectedCell.Y === i">
 
+    <!--Show the possibility-->
+    <div *ngIf="Grid.Grid[j][i].Possibilities.length > 1">
+      <div *ngFor="let possibility of Grid.Grid[j][i].Possibilities"
+           class="possibility"
+           height="6px"
+           width="6px"
+           [ngStyle]="GetPossibilityStyles(possibility)">
+        {{ possibility+1 }}
+      </div>
     </div>
 
-</div>
+    <!--Show a given / solved number-->
+    <div *ngIf="Grid.Grid[j][i].Possibilities.length == 1"
+         class="given">
+      {{ Grid.Grid[j][i].Possibilities[0]+1 }}
+    </div>
+
+  </div>

@@ -31,4 +31,19 @@ export class SudokuComponent {
     this.sudokuService.ChangeSelectedCell(cellNr);
   }
 
+  public GetPossibilityStyles(num: number) {
+    return {
+      'top':  this.PossibilityVerticalPosition  (num) + "px",
+      'left': this.PossibilityHorizontalPosition(num) + "px"
+    };
+  }
+  
+  private PossibilityVerticalPosition(x: number) {
+    return Math.floor(x/3)*18
+  }
+
+  private PossibilityHorizontalPosition(x: number) {
+    return x%3*18 + 5
+  }
+
 }

@@ -2,6 +2,7 @@
   width: 3.5rem;
   height: 3.5rem;
   font-size: 10px;
+  position: relative;
 }
 
 .cell:nth-child(1n+0):not(:nth-child(3n+0)) {
@@ -20,5 +21,20 @@
 }
 
 .cell.active {
-    background-color: #ff8;
+  background-color: #ff8;
+}
+
+.possibility {
+  position: absolute;
+  cursor: default;
+  padding: 2px;
+}
+
+.possibility:hover {
+   background-color: rgba(255, 164, 0, 0.27);
+}
+
+.given {
+   font-size: 3.5rem;
+   font-weight: 400;
 }

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { KeyboardEventService } from './services/keyboardevents.service';
+import { Component, HostListener } from '@angular/core';
+import { KeyboardEventsService } from './services/keyboardevents.service';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +8,11 @@ import { KeyboardEventService } from './services/keyboardevents.service';
 export class AppComponent {
   title = 'app';
 
-  constructor (private keyboardeventsService: KeyboardEventService) {}
+  constructor(private keyboardeventsService: KeyboardEventsService) { }
 
-  onKey(event: KeyboardEvent): void { // with type info
-    console.log({ event })
+
+  @HostListener('document:keypress', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
     this.keyboardeventsService.onKey(event);
   }
 }
